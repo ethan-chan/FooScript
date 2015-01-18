@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cmd_system.cpp" />
+    <ClCompile Include="foo.cpp" />
+    <ClCompile Include="json\jsoncpp.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="base\path.cpp">
+      <Filter>base\path</Filter>
+    </ClCompile>
+    <ClCompile Include="syntax\value.cpp">
+      <Filter>syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\lexer.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\reg_parser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\foo_scanner.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\foo_driver.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\parser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="vm\foo_vm.cpp">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="base\char_set.cpp">
+      <Filter>base\char_set</Filter>
+    </ClCompile>
+    <ClCompile Include="base\log\log.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="base\log\pri.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cmd_system.h" />
+    <ClInclude Include="json\json.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="base\path.h">
+      <Filter>base\path</Filter>
+    </ClInclude>
+    <ClInclude Include="syntax\value.h">
+      <Filter>syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\reg_parser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\parser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\foo_scanner.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\foo_driver.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\location.hh">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\position.hh">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="syntax\def.h">
+      <Filter>syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="vm\foo_vm.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="base\char_set.h">
+      <Filter>base\char_set</Filter>
+    </ClInclude>
+    <ClInclude Include="base\log\log.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="base\log\pri.h">
+      <Filter>log</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="json">
+      <UniqueIdentifier>{ffe8f723-2e32-42c2-a5fe-fa4760de3ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parser">
+      <UniqueIdentifier>{e7d52833-3403-44bd-a228-6db8d76dd1b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="other">
+      <UniqueIdentifier>{29fd33a3-57cd-403c-95e8-b12fffc3706f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{52862ff7-dd4c-4222-851b-91ee4021939a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\char_set">
+      <UniqueIdentifier>{692d499f-bdd5-4abd-8ead-0b77ac115896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\path">
+      <UniqueIdentifier>{e120aa02-3e52-4b6c-8448-c73b4fdaa04e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="syntax">
+      <UniqueIdentifier>{ea0bcbf2-6766-4438-9f54-2f2650ccac19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{2fdd645e-423d-4fea-a69a-c09829297780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vm">
+      <UniqueIdentifier>{1d364959-1665-4b54-aed2-4f78c1be889f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>other</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="parser\lexer.l">
+      <Filter>parser</Filter>
+    </CustomBuild>
+    <CustomBuild Include="parser\parser.y">
+      <Filter>parser</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

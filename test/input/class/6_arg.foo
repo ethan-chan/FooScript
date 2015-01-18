@@ -1,0 +1,26 @@
+class foo1():
+#
+foo1();
+class foo2():
+#
+foo2(1);
+class foo3(a):
+	print(a);
+#
+foo3(1);
+class foo4(a,b,c):
+	print(a,b,c);
+#
+foo4(1);
+foo4(1,2);
+foo4(1,2,3);
+foo4(1,2,3,4);
+foo4(1,2,3,4,5);
+class foo5(a=11,b=22,c=33):
+	print(a,b,c);
+#
+foo5(1);
+foo5(1,2);
+foo5(1,2,3);
+foo5(1,2,3,4);
+foo5(1,2,3,4,5);

@@ -1,0 +1,57 @@
+a1=1;a2=2;a3=3;
+a4=4;a5=5;a6=6;
+a7=7;a8=8;a9=9;
+class foo:
+	print(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+	print(a1,a2,a3,a4,a5);
+	print(a10,a11,a12,0);
+#
+foo();
+class bar:
+	b1=11;b2=22;b3=33;
+	b4=44;b5=55;b6=66;
+	b7=77;b8=88;b9=99;
+	.c1=111;.c2=222;.c3=333;
+	.c4=444;.c5=555;.c6=666;
+	.c7=777;.c8=888;.c9=999;
+	print(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+	print(a1,a2,a3,a4,a5);
+	print(a10,a11,a12,0);
+	print(b1,b2,b3,b4,b5,b6,b7,b8,b9);
+	print(b1,b2,b3,b4,b5);
+	print(b10,b11,b12,0);
+	print(.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9);
+	print(.c1,.c2,.c3,.c4,.c5);
+	print(.c10,.c11,.c12,0);
+#
+bar();
+class foobar:
+	b1=11;b2=22;b3=33;
+	b4=44;b5=55;b6=66;
+	b7=77;b8=88;b9=99;
+	class Moo:
+		c1=111;c2=222;c3=333;
+		c4=444;c5=555;c6=666;
+		c7=777;c8=888;c9=999;
+		print(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+		print(a1,a2,a3,a4,a5);
+		print(a10,a11,a12,0);
+		print(b1,b2,b3,b4,b5,b6,b7,b8,b9);
+		print(b1,b2,b3,b4,b5);
+		print(b10,b11,b12,0);
+		print(c1,c2,c3,c4,c5,c6,c7,c8,c9);
+		print(c1,c2,c3,c4,c5);
+		print(c10,c11,c12,0);
+	#
+	Moo();
+	print(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+	print(a1,a2,a3,a4,a5);
+	print(a10,a11,a12,0);
+	print(b1,b2,b3,b4,b5,b6,b7,b8,b9);
+	print(b1,b2,b3,b4,b5);
+	print(b10,b11,b12,0);
+	print(c1,c2,c3,c4,c5,c6,c7,c8,c9);
+	print(c1,c2,c3,c4,c5);
+	print(c10,c11,c12,0);
+#
+foobar();

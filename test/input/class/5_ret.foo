@@ -1,0 +1,7 @@
+class foo:
+	.a;
+	.b=1.7;
+	.c=1;
+#
+a = foo();
+print(a);

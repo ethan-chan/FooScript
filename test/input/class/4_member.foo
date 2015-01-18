@@ -1,0 +1,26 @@
+class foo:
+	a = 1;
+	.b=2;
+	.c = a +.b + 1;
+	.d = (1 + .b*9 / (a + 1))*.c;
+	.f = 0.112;
+	print('foo:', a,.b,.c,.d,.f);
+	class bar:
+		.bb=2;
+		.cc = a +.bb + 12;
+		.dd = (1 + .bb*9 / (a + 4))*.cc;
+		.ff = 0.5*.bb + 0.3;
+		print('bar', a,.bb,.cc,.dd,.ff);
+	#
+	.bar = bar;
+	.bbb = bar();
+#
+m = foo();
+print('---------1:',m.c);
+m.c = 14;
+print('---------2:',m.c);
+print('---------3:',m.bbb.bb);
+m.bbb.bb = 15;
+print('---------4:',m.bbb.bb);
+n = m.b + m.c * m.d * (m.bbb.dd + m.bbb.bb);
+print(n);

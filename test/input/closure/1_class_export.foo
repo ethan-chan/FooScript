@@ -1,0 +1,19 @@
+a=1;
+class foo(x,y):
+	b=2;
+	class bar(m,n):
+		print(a,b,m,n,x,y);
+		.d=a+b+m+n+x+y;
+	#
+	.b=bar;
+	.c=bar();
+#
+print(foo());
+d=foo();
+print(d);
+print(d.b());
+print(d.b().d);
+dd=d;
+d=d.b();
+print(d.d);
+print(dd.c.d);
