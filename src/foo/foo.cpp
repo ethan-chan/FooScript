@@ -49,7 +49,7 @@ int _tmain(int argc, _TCHAR* argv[])
     FooBase::Path::SetCurDirectory(TempFile);
     std::locale        loc(std::cout.getloc(), new no_comma_numpunct);
     std::ofstream    ofs;
-    ofs.open(L"./foodata/log.txt", std::wofstream::app);
+    ofs.open(L"./log.txt", std::wofstream::app);
 
     std::wstring    TargetPath;
     std::wstring    ServiceName;
