@@ -5,3 +5,4 @@
 /sln/*.suo
 /sln/ipch/foo-5aa64390/*.ipch
 /src/foo/Debug
+*.opensdf
