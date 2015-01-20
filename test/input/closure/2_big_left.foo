@@ -1,0 +1,35 @@
+class foo(m):
+	class aaa(n):
+		class bbb(t):
+			class ccc(p):
+				class ddd(q):
+					.a = 7;
+					print(q);
+				#
+				.ddd=ddd;
+				print(p);
+			#
+			.ccc=ccc;
+			print(t);
+		#
+		.bbb=bbb;
+		print(n);
+	#
+	.aaa=aaa;
+	print(m);
+#
+class bar(m):
+	print(m);
+#
+a=1;
+class return(m):
+	a=a+m;
+	.a=a;
+#
+class return_print(m):
+	.a=m;
+	print(m);
+#
+foo(1).aaa(2).bbb(3).ccc(4).ddd(5).a = bar(6);
+foo(return(0).a).aaa(return(1).a).bbb(return(1).a).ccc(return(1).a).ddd(return(1).a).a = bar(return(1).a);
+foo(return_print(0).a + 10).aaa(return_print(1).a+20).bbb(return_print(2).a+30).ccc(return_print(3).a+40).ddd(return_print(4).a+50).a = bar(return_print(5).a+60);
