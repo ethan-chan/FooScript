@@ -45,6 +45,9 @@ namespace FooScript{
             void PumpStateClassDefEnd();
             void PumpStateClassEnd();
 
+            void PumpStateCompleteCallbackStart();
+            void PumpStateCompleteCallbackEnd();
+
             void PumpStateClassCallStart();
             void PumpStateClassCallEnd();
             void PumpStateClassCallWithoutArg();

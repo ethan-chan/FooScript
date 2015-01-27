@@ -85,6 +85,7 @@ FooVM::FooVM(FooCmdSystem& Fcs) : fcs(Fcs)
     RegisterDbgInstr(eInstr::I_CLASS_CALL_END, "I_CLASS_CALL_END", 0);
     RegisterDbgInstr(eInstr::I_CLASS_ARGU_CLAUSE, "I_CLASS_ARGU_CLAUSE", 1);
     RegisterDbgInstr(eInstr::I_CLASS_SET_PARA_CLAUSE, "I_CLASS_SET_PARA_CLAUSE", 2);
+    RegisterDbgInstr(eInstr::I_CLASS_COMPLETE_CALLBACK, "I_CLASS_COMPLATE_CALLBACK", 1);
     RegisterDbgInstr(eInstr::I_MEMBER, "I_MEMBER", 2);
     RegisterDbgInstr(eInstr::I_CONTEXT_MEMBER, "I_CONTEXT_MEMBER", 1);
 
@@ -125,7 +126,9 @@ FooVM::tSClassSPtr FooVM::CreateSClass(
     const tToken& Name,
     tSClassSPtr& Parent, 
     tIndex& SClassIndex) {
-    auto StaticClass = tSClassSPtr(new tStaticClass(Name, Parent, instr_stream.size() + 3));
+    auto StaticClass = tSClassSPtr(new 
+        tStaticClass(Name, Parent, 
+        Name == "" ? instr_stream.size() + 2 : instr_stream.size() + 3));
     static_class_array.push_back(StaticClass);
     SClassIndex = static_class_array.size() - 1;
     return StaticClass;
@@ -221,6 +224,9 @@ void FooVM::ExecuteByStep() {
         break;
     case eInstr::I_CLASS_SET_PARA_CLAUSE:
         ExecuteClassSetParaClause();
+        break;
+    case eInstr::I_CLASS_COMPLETE_CALLBACK:
+        ExecuteClassCompleteCallback();
         break;
     case eInstr::I_MEMBER:
         ExecuteMemberAccess();
@@ -503,6 +509,25 @@ void FooVM::ExecuteClassSetParaClause() {
     // 默认参数只有在目标值为空时才进行设置
     if (Left.isNull())
         Left = Right;
+}
+
+void FooVM::ExecuteClassCompleteCallback() {
+    // 获取静态类索引
+    auto CurSClassIndex = FetchIndex();
+
+    // 创建类对象，并跳至类结尾
+    auto CurSClass = GetSClassByIndex(CurSClassIndex);
+    auto PrevContext = GetCurrentContext();
+    auto CurClass = tClassSPtr(new tClass(CurSClass, PrevContext));
+    auto CurObjectPtr = std::static_pointer_cast<Type::ValueObject>(CurClass);
+    JumpToInstr(CurClass->GetEndCursor());
+
+    // 创建上下文对象
+    auto CurContext = tContextSPtr(new tContext(CurClass, PrevContext));
+    // 进入上下文
+    ExecuteClassContextEnter(CurContext);
+    // 开始执行
+    ExecuteClassCall(CurContext);
 }
 
 void FooVM::ExecuteMemberAccess() {

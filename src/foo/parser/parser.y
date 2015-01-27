@@ -126,7 +126,7 @@ primary_expression
 postfix_expression
     : primary_expression
     | postfix_expression '[' expression ']'             {}
-    | postfix_call
+    | postfix_call postfix_call_post_callback_opt
     | '.' TOKEN_ID                                      { driver.PumpExpContextMember($2); }
     | '$''.' TOKEN_ID                                   { driver.PumpExpContextStaticMember($3); }
     | postfix_expression '.' TOKEN_ID                   { driver.PumpExpMember($3); }
@@ -135,7 +135,7 @@ postfix_expression
     ;
 
 postfix_call
-    : postfix_expression '(' ')' postfix_call_post_callback_opt                 { driver.PumpStateClassCallWithoutArg(); }
+    : postfix_expression '(' ')'                 { driver.PumpStateClassCallWithoutArg(); }
     | postfix_call_start postfix_call_end        {}
     ;
 
@@ -143,7 +143,7 @@ postfix_call_start
     : postfix_expression '('                     { driver.PumpStateClassCallStart(); }
     ;
 postfix_call_end
-    :  function_argu_clause_list ')' postfix_call_post_callback_opt             { driver.PumpStateClassCallEnd(); }
+    :  function_argu_clause_list ')'             { driver.PumpStateClassCallEnd(); }
     ;
 
 /*
@@ -153,7 +153,15 @@ postfix_call_pre_callback_opt
 */
 postfix_call_post_callback_opt
     :
-    | ':' statement_seq.opt '#'
+    | postfix_call_post_callback_start statement_seq.opt postfix_call_post_callback_end
+    ;
+
+postfix_call_post_callback_start
+    :  ':'                             { driver.PumpStateCompleteCallbackStart(); }
+    ;
+
+postfix_call_post_callback_end
+    :  '#'                             { driver.PumpStateClassEnd(); }  
     ;
 
 unary_expression

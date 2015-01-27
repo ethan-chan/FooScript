@@ -606,248 +606,260 @@ namespace  FooScript { namespace Parser  {
 #line 607 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 31:
-#line 165 "parser.y" // lalr1.cc:846
-    { driver.PumpExpMul(); }
+  case 29:
+#line 160 "parser.y" // lalr1.cc:846
+    { driver.PumpStateCompleteCallbackStart(); }
 #line 613 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 32:
-#line 166 "parser.y" // lalr1.cc:846
-    { driver.PumpExpDiv(); }
+  case 30:
+#line 164 "parser.y" // lalr1.cc:846
+    { driver.PumpStateClassEnd(); }
 #line 619 "parser.cpp" // lalr1.cc:846
     break;
 
   case 33:
-#line 167 "parser.y" // lalr1.cc:846
-    { driver.PumpExpMod(); }
+#line 173 "parser.y" // lalr1.cc:846
+    { driver.PumpExpMul(); }
 #line 625 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 35:
-#line 172 "parser.y" // lalr1.cc:846
-    { driver.PumpExpAdd(); }
+  case 34:
+#line 174 "parser.y" // lalr1.cc:846
+    { driver.PumpExpDiv(); }
 #line 631 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 36:
-#line 173 "parser.y" // lalr1.cc:846
-    { driver.PumpExpMin(); }
+  case 35:
+#line 175 "parser.y" // lalr1.cc:846
+    { driver.PumpExpMod(); }
 #line 637 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 38:
-#line 178 "parser.y" // lalr1.cc:846
-    {}
+  case 37:
+#line 180 "parser.y" // lalr1.cc:846
+    { driver.PumpExpAdd(); }
 #line 643 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 39:
-#line 179 "parser.y" // lalr1.cc:846
-    {}
+  case 38:
+#line 181 "parser.y" // lalr1.cc:846
+    { driver.PumpExpMin(); }
 #line 649 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 41:
-#line 184 "parser.y" // lalr1.cc:846
+  case 40:
+#line 186 "parser.y" // lalr1.cc:846
     {}
 #line 655 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 42:
-#line 185 "parser.y" // lalr1.cc:846
+  case 41:
+#line 187 "parser.y" // lalr1.cc:846
     {}
 #line 661 "parser.cpp" // lalr1.cc:846
     break;
 
   case 43:
-#line 186 "parser.y" // lalr1.cc:846
+#line 192 "parser.y" // lalr1.cc:846
     {}
 #line 667 "parser.cpp" // lalr1.cc:846
     break;
 
   case 44:
-#line 187 "parser.y" // lalr1.cc:846
+#line 193 "parser.y" // lalr1.cc:846
     {}
 #line 673 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 46:
-#line 192 "parser.y" // lalr1.cc:846
+  case 45:
+#line 194 "parser.y" // lalr1.cc:846
     {}
 #line 679 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 47:
-#line 193 "parser.y" // lalr1.cc:846
+  case 46:
+#line 195 "parser.y" // lalr1.cc:846
     {}
 #line 685 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 49:
-#line 198 "parser.y" // lalr1.cc:846
+  case 48:
+#line 200 "parser.y" // lalr1.cc:846
     {}
 #line 691 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 51:
-#line 203 "parser.y" // lalr1.cc:846
+  case 49:
+#line 201 "parser.y" // lalr1.cc:846
     {}
 #line 697 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 53:
-#line 208 "parser.y" // lalr1.cc:846
+  case 51:
+#line 206 "parser.y" // lalr1.cc:846
     {}
 #line 703 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 55:
-#line 213 "parser.y" // lalr1.cc:846
+  case 53:
+#line 211 "parser.y" // lalr1.cc:846
     {}
 #line 709 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 57:
-#line 218 "parser.y" // lalr1.cc:846
+  case 55:
+#line 216 "parser.y" // lalr1.cc:846
     {}
 #line 715 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 59:
-#line 230 "parser.y" // lalr1.cc:846
-    { driver.PumpStateAssign(); }
+  case 57:
+#line 221 "parser.y" // lalr1.cc:846
+    {}
 #line 721 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 62:
-#line 240 "parser.y" // lalr1.cc:846
+  case 59:
+#line 226 "parser.y" // lalr1.cc:846
     {}
 #line 727 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 63:
-#line 241 "parser.y" // lalr1.cc:846
-    {}
+  case 61:
+#line 238 "parser.y" // lalr1.cc:846
+    { driver.PumpStateAssign(); }
 #line 733 "parser.cpp" // lalr1.cc:846
     break;
 
   case 64:
-#line 242 "parser.y" // lalr1.cc:846
+#line 248 "parser.y" // lalr1.cc:846
     {}
 #line 739 "parser.cpp" // lalr1.cc:846
     break;
 
   case 65:
-#line 243 "parser.y" // lalr1.cc:846
+#line 249 "parser.y" // lalr1.cc:846
     {}
 #line 745 "parser.cpp" // lalr1.cc:846
     break;
 
   case 66:
-#line 244 "parser.y" // lalr1.cc:846
+#line 250 "parser.y" // lalr1.cc:846
     {}
 #line 751 "parser.cpp" // lalr1.cc:846
     break;
 
   case 67:
-#line 245 "parser.y" // lalr1.cc:846
+#line 251 "parser.y" // lalr1.cc:846
     {}
 #line 757 "parser.cpp" // lalr1.cc:846
     break;
 
   case 68:
-#line 246 "parser.y" // lalr1.cc:846
+#line 252 "parser.y" // lalr1.cc:846
     {}
 #line 763 "parser.cpp" // lalr1.cc:846
     break;
 
   case 69:
-#line 247 "parser.y" // lalr1.cc:846
+#line 253 "parser.y" // lalr1.cc:846
     {}
 #line 769 "parser.cpp" // lalr1.cc:846
     break;
 
   case 70:
-#line 248 "parser.y" // lalr1.cc:846
+#line 254 "parser.y" // lalr1.cc:846
     {}
 #line 775 "parser.cpp" // lalr1.cc:846
     break;
 
   case 71:
-#line 249 "parser.y" // lalr1.cc:846
+#line 255 "parser.y" // lalr1.cc:846
     {}
 #line 781 "parser.cpp" // lalr1.cc:846
     break;
 
   case 72:
-#line 250 "parser.y" // lalr1.cc:846
+#line 256 "parser.y" // lalr1.cc:846
     {}
 #line 787 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 85:
-#line 299 "parser.y" // lalr1.cc:846
-    { driver.ExitFooMode(); }
+  case 73:
+#line 257 "parser.y" // lalr1.cc:846
+    {}
 #line 793 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 86:
-#line 305 "parser.y" // lalr1.cc:846
-    { driver.PumpStateClassEnd(); }
+  case 74:
+#line 258 "parser.y" // lalr1.cc:846
+    {}
 #line 799 "parser.cpp" // lalr1.cc:846
+    break;
+
+  case 87:
+#line 307 "parser.y" // lalr1.cc:846
+    { driver.ExitFooMode(); }
+#line 805 "parser.cpp" // lalr1.cc:846
     break;
 
   case 88:
 #line 313 "parser.y" // lalr1.cc:846
-    { driver.PumpStateClass(yystack_[0].value.as< std::string > ()); }
-#line 805 "parser.cpp" // lalr1.cc:846
-    break;
-
-  case 90:
-#line 317 "parser.y" // lalr1.cc:846
-    { }
+    { driver.PumpStateClassEnd(); }
 #line 811 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 91:
-#line 318 "parser.y" // lalr1.cc:846
-    {}
+  case 90:
+#line 321 "parser.y" // lalr1.cc:846
+    { driver.PumpStateClass(yystack_[0].value.as< std::string > ()); }
 #line 817 "parser.cpp" // lalr1.cc:846
     break;
 
   case 92:
-#line 322 "parser.y" // lalr1.cc:846
-    { driver.PumpStateClassDefStart(); }
+#line 325 "parser.y" // lalr1.cc:846
+    { }
 #line 823 "parser.cpp" // lalr1.cc:846
     break;
 
   case 93:
-#line 325 "parser.y" // lalr1.cc:846
-    { driver.PumpStateClassDefEnd(); }
+#line 326 "parser.y" // lalr1.cc:846
+    {}
 #line 829 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 97:
-#line 338 "parser.y" // lalr1.cc:846
-    { driver.PumpClassParaClause(); }
+  case 94:
+#line 330 "parser.y" // lalr1.cc:846
+    { driver.PumpStateClassDefStart(); }
 #line 835 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 98:
-#line 339 "parser.y" // lalr1.cc:846
-    { driver.PumpClassParaSetClause(); }
+  case 95:
+#line 333 "parser.y" // lalr1.cc:846
+    { driver.PumpStateClassDefEnd(); }
 #line 841 "parser.cpp" // lalr1.cc:846
     break;
 
-  case 102:
-#line 352 "parser.y" // lalr1.cc:846
-    { driver.PumpClassArguClause(); }
+  case 99:
+#line 346 "parser.y" // lalr1.cc:846
+    { driver.PumpClassParaClause(); }
 #line 847 "parser.cpp" // lalr1.cc:846
     break;
 
+  case 100:
+#line 347 "parser.y" // lalr1.cc:846
+    { driver.PumpClassParaSetClause(); }
+#line 853 "parser.cpp" // lalr1.cc:846
+    break;
 
-#line 851 "parser.cpp" // lalr1.cc:846
+  case 104:
+#line 360 "parser.y" // lalr1.cc:846
+    { driver.PumpClassArguClause(); }
+#line 859 "parser.cpp" // lalr1.cc:846
+    break;
+
+
+#line 863 "parser.cpp" // lalr1.cc:846
           default:
             break;
           }
@@ -1018,104 +1030,104 @@ namespace  FooScript { namespace Parser  {
 
   const signed char  FooParser ::yypact_ninf_ = -38;
 
-  const signed char  FooParser ::yytable_ninf_ = -77;
+  const signed char  FooParser ::yytable_ninf_ = -79;
 
   const signed char
    FooParser ::yypact_[] =
   {
-       3,   -38,   -38,   -38,   -38,   -38,     2,   -38,    70,    18,
-       6,   -38,   -38,   -38,   -38,   -38,   -38,    43,   -38,    45,
-     -38,    70,   -38,    -9,   -15,    26,    12,    47,   -31,     5,
-      13,    34,    21,    17,    87,    28,    19,   -38,   -38,     9,
-     -38,   -38,    53,    65,   -38,    66,   -38,    94,   -38,   -38,
-     -38,    67,    70,    97,   -38,   -38,    -8,   -38,    70,    70,
-      70,    70,    70,    70,    70,    70,    70,    70,    70,    70,
-      70,    70,    70,    70,    70,    70,   -38,   -38,   -38,   -38,
-     -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,    70,   -38,
-      70,   -38,   -38,    15,   -38,    71,   -38,     2,   -38,   -38,
-      80,    68,   -38,    80,    70,   -38,   -38,   -38,    -9,    -9,
-     -15,   -15,    26,    26,    26,    26,    12,    12,    47,   -31,
-       5,    13,    34,   -38,    54,    82,    15,   -38,    69,   -38,
-      -3,   -38,   -38,    15,   -38,   -38,   -38,   -38,   -38,    70,
-     -38,     2,    83,   -38,   -38,   -38
+       3,   -38,   -38,   -38,   -38,   -38,     2,   -38,    60,    12,
+     -14,   -38,   -38,   -38,   -38,   -38,   -38,    30,   -38,    70,
+      -5,    60,   -38,   -13,     0,    43,    11,    50,    28,    55,
+      10,    75,    25,    22,    57,    53,    59,   -38,   -38,     9,
+     -38,   -38,    73,    80,   -38,    81,   -38,   109,   -38,   -38,
+     -38,    82,    60,   112,   -38,   -38,    15,   -38,   -38,    -3,
+     -38,    60,    60,    60,    60,    60,    60,    60,    60,    60,
+      60,    60,    60,    60,    60,    60,    60,    60,    60,   -38,
+     -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,
+     -38,    60,   -38,    60,   -38,   -38,    15,   -38,    84,   -38,
+       2,   -38,   -38,   -38,    83,   -38,    85,    15,   -38,    60,
+     -38,   -38,   -38,   -13,   -13,     0,     0,    43,    43,    43,
+      43,    11,    11,    50,    28,    55,    10,    75,   -38,    68,
+      86,   -38,    71,   -38,    -1,   -38,   -38,   -38,   -38,   -38,
+     -38,   -38,    60,   -38,     2,   -38,   -38
   };
 
   const unsigned char
    FooParser ::yydefact_[] =
   {
-       0,     9,     2,     6,     7,     8,     0,    85,     0,     0,
-       0,    79,    14,    12,     3,     4,     5,     0,    15,    29,
-      17,     0,    30,    34,    37,    40,    45,    48,    50,    52,
-      54,    56,    60,    73,     0,     0,     0,    83,    77,     0,
-      11,    78,     0,    89,    88,     0,    18,     0,     1,    21,
-      22,    25,     0,     0,    24,   102,     0,   100,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,    66,    67,    63,    64,
-      65,    71,    70,    72,    68,    69,    62,    59,     0,    80,
-       0,    10,    84,    81,    86,    92,    87,     0,    13,    19,
-      27,     0,    20,    27,     0,    31,    32,    33,    35,    36,
-      38,    39,    43,    44,    41,    42,    46,    47,    49,    51,
-      53,    55,    57,    61,    74,     0,    82,    90,    97,    91,
-       0,    94,    96,    81,    23,    16,    26,   101,    99,     0,
-      93,     0,     0,    98,    95,    28
+       0,     9,     2,     6,     7,     8,     0,    87,     0,     0,
+       0,    81,    14,    12,     3,     4,     5,     0,    15,    31,
+      27,     0,    32,    36,    39,    42,    47,    50,    52,    54,
+      56,    58,    62,    75,     0,     0,     0,    85,    79,     0,
+      11,    80,     0,    91,    90,     0,    18,     0,     1,    21,
+      22,    25,     0,     0,    29,    17,    83,    24,   104,     0,
+     102,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,    68,
+      69,    65,    66,    67,    73,    72,    74,    70,    71,    64,
+      61,     0,    82,     0,    10,    86,    83,    88,    94,    89,
+       0,    13,    19,    23,     0,    20,     0,    84,    26,     0,
+      33,    34,    35,    37,    38,    40,    41,    45,    46,    43,
+      44,    48,    49,    51,    53,    55,    57,    59,    63,    76,
+       0,    92,    99,    93,     0,    96,    98,    16,    30,    28,
+     103,   101,     0,    95,     0,   100,    97
   };
 
-  const signed char
+  const short int
    FooParser ::yypgoto_[] =
   {
      -38,    -6,   -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,
-     -38,   -38,    22,    23,    31,     1,    20,    25,    51,    52,
-      50,    55,    56,   -38,   -20,   -38,   -38,   -38,    -4,   -38,
-     -37,   -38,    -7,   127,   -38,   -38,   -38,   -38,   -38,   -38,
-     -38,   -38,   -13,   -38,   -38,   -38,    29
+     -38,   -38,   -38,   -38,   -38,   -26,     4,    26,    29,    35,
+      45,    46,    49,    51,    48,   -38,   -20,   -38,   -38,   -38,
+      -4,   -38,   -37,   -38,    31,   129,   -38,   -38,   -38,   -38,
+     -38,   -38,   -38,   -38,   -12,   -38,   -38,   -38,    21
   };
 
   const short int
    FooParser ::yydefgoto_[] =
   {
       -1,    12,    13,    14,    15,    16,    17,    18,    19,    20,
-      21,    54,   134,    22,    23,    24,    25,    26,    27,    28,
-      29,    30,    31,    32,    33,    34,    87,    88,    35,    36,
-      37,    38,   125,   126,    40,    41,    42,    43,    96,    97,
-     129,   130,   131,   132,    94,    56,    57
+      21,    57,    55,    56,   139,    22,    23,    24,    25,    26,
+      27,    28,    29,    30,    31,    32,    33,    34,    90,    91,
+      35,    36,    37,    38,   106,   107,    40,    41,    42,    43,
+      99,   100,   133,   134,   135,   136,    97,    59,    60
   };
 
   const short int
    FooParser ::yytable_[] =
   {
-      44,    55,    92,     1,    45,     2,     2,     3,     4,    91,
-       5,     6,     2,     3,     4,    71,     5,     6,     2,     3,
-       4,    46,     5,     6,   103,    65,    66,    61,    62,   140,
-      58,    59,    60,     7,     8,    63,    64,    75,     9,    10,
-       8,    47,   104,    48,     9,    10,     8,   141,   101,    74,
-       9,    10,    72,   -58,    11,   -58,    67,    68,    69,    70,
-      11,    73,    49,    50,   110,   111,    11,   -75,   123,    90,
-     124,   -58,   -58,     2,     3,     4,    51,     5,    52,    89,
-      53,   105,   106,   107,    55,   112,   113,   114,   115,    92,
-      93,   128,   108,   109,   116,   117,    95,    99,    98,   100,
-     102,     8,   135,   127,   -76,     9,    10,    76,    77,    78,
-      79,    80,    81,    82,    83,    84,    85,   133,   139,   143,
-     138,   145,   118,   120,   119,   136,   142,    39,   144,   121,
-       0,   122,     0,   137,     0,   128,    86
+      44,    58,    95,     1,    45,     2,     2,     3,     4,    94,
+       5,     6,     2,     3,     4,    46,     5,     6,     2,     3,
+       4,    47,     5,     6,    68,    69,    61,    62,    63,   108,
+      48,   143,    54,     7,     8,   110,   111,   112,     9,    10,
+       8,    78,    64,    65,     9,    10,     8,   109,   104,   144,
+       9,    10,    66,    67,    11,    70,    71,   -60,    76,   -60,
+      11,    72,    73,     2,     3,     4,    11,     5,   113,   114,
+      95,   128,   -77,   129,    74,   -60,   -60,    79,    80,    81,
+      82,    83,    84,    85,    86,    87,    88,    49,    50,    58,
+      77,     8,   115,   116,   132,     9,    10,   117,   118,   119,
+     120,    51,    75,    52,    92,    53,    89,   121,   122,    93,
+      96,    98,   102,   101,   103,   105,   131,   137,   -78,   123,
+     142,   124,   145,   138,   141,   125,   127,   130,   126,    39,
+     140,     0,   146,     0,     0,     0,     0,     0,   132
   };
 
   const short int
    FooParser ::yycheck_[] =
   {
        6,    21,    39,     0,     8,     3,     3,     4,     5,     0,
-       7,     8,     3,     4,     5,    46,     7,     8,     3,     4,
-       5,     3,     7,     8,    32,    13,    14,    42,    43,    32,
-      39,    40,    41,    30,    31,     9,    10,    16,    35,    36,
-      31,    35,    50,     0,    35,    36,    31,    50,    52,    15,
-      35,    36,    47,    32,    51,    34,    44,    45,    11,    12,
-      51,    48,    17,    18,    63,    64,    51,    50,    88,    50,
-      90,    50,    51,     3,     4,     5,    31,     7,    33,    51,
-      35,    58,    59,    60,   104,    65,    66,    67,    68,   126,
-      37,    97,    61,    62,    69,    70,    31,     3,    32,    32,
-       3,    31,    34,    32,    50,    35,    36,    20,    21,    22,
-      23,    24,    25,    26,    27,    28,    29,    37,    49,   139,
-      38,    38,    71,    73,    72,   103,   133,     0,   141,    74,
-      -1,    75,    -1,   104,    -1,   141,    49
+       7,     8,     3,     4,     5,     3,     7,     8,     3,     4,
+       5,    35,     7,     8,    13,    14,    39,    40,    41,    32,
+       0,    32,    37,    30,    31,    61,    62,    63,    35,    36,
+      31,    16,    42,    43,    35,    36,    31,    50,    52,    50,
+      35,    36,     9,    10,    51,    44,    45,    32,    48,    34,
+      51,    11,    12,     3,     4,     5,    51,     7,    64,    65,
+     107,    91,    50,    93,    46,    50,    51,    20,    21,    22,
+      23,    24,    25,    26,    27,    28,    29,    17,    18,   109,
+      15,    31,    66,    67,   100,    35,    36,    68,    69,    70,
+      71,    31,    47,    33,    51,    35,    49,    72,    73,    50,
+      37,    31,     3,    32,    32,     3,    32,    34,    50,    74,
+      49,    75,   142,    38,    38,    76,    78,    96,    77,     0,
+     109,    -1,   144,    -1,    -1,    -1,    -1,    -1,   144
   };
 
   const unsigned char
@@ -1123,19 +1135,19 @@ namespace  FooScript { namespace Parser  {
   {
        0,     0,     3,     4,     5,     7,     8,    30,    31,    35,
       36,    51,    53,    54,    55,    56,    57,    58,    59,    60,
-      61,    62,    65,    66,    67,    68,    69,    70,    71,    72,
-      73,    74,    75,    76,    77,    80,    81,    82,    83,    85,
-      86,    87,    88,    89,    53,    80,     3,    35,     0,    17,
-      18,    31,    33,    35,    63,    76,    97,    98,    39,    40,
-      41,    42,    43,     9,    10,    13,    14,    44,    45,    11,
-      12,    46,    47,    48,    15,    16,    20,    21,    22,    23,
-      24,    25,    26,    27,    28,    29,    49,    78,    79,    51,
-      50,     0,    82,    37,    96,    31,    90,    91,    32,     3,
-      32,    80,     3,    32,    50,    65,    65,    65,    66,    66,
-      67,    67,    68,    68,    68,    68,    69,    69,    70,    71,
-      72,    73,    74,    76,    76,    84,    85,    32,    53,    92,
-      93,    94,    95,    37,    64,    34,    64,    98,    38,    49,
-      32,    50,    84,    76,    94,    38
+      61,    62,    67,    68,    69,    70,    71,    72,    73,    74,
+      75,    76,    77,    78,    79,    82,    83,    84,    85,    87,
+      88,    89,    90,    91,    53,    82,     3,    35,     0,    17,
+      18,    31,    33,    35,    37,    64,    65,    63,    78,    99,
+     100,    39,    40,    41,    42,    43,     9,    10,    13,    14,
+      44,    45,    11,    12,    46,    47,    48,    15,    16,    20,
+      21,    22,    23,    24,    25,    26,    27,    28,    29,    49,
+      80,    81,    51,    50,     0,    84,    37,    98,    31,    92,
+      93,    32,     3,    32,    82,     3,    86,    87,    32,    50,
+      67,    67,    67,    68,    68,    69,    69,    70,    70,    70,
+      70,    71,    71,    72,    73,    74,    75,    76,    78,    78,
+      86,    32,    53,    94,    95,    96,    97,    34,    38,    66,
+     100,    38,    49,    32,    50,    78,    96
   };
 
   const unsigned char
@@ -1144,30 +1156,30 @@ namespace  FooScript { namespace Parser  {
        0,    52,    53,    54,    54,    54,    55,    56,    57,    58,
       58,    58,    59,    59,    59,    60,    60,    60,    60,    60,
       60,    60,    60,    61,    61,    62,    63,    64,    64,    65,
-      66,    66,    66,    66,    67,    67,    67,    68,    68,    68,
-      69,    69,    69,    69,    69,    70,    70,    70,    71,    71,
-      72,    72,    73,    73,    74,    74,    75,    75,    76,    76,
-      77,    78,    79,    79,    79,    79,    79,    79,    79,    79,
-      79,    79,    79,    80,    80,    81,    81,    82,    82,    83,
-      83,    84,    84,    85,    85,    86,    87,    88,    89,    90,
-      90,    90,    91,    92,    93,    93,    94,    95,    95,    96,
-      97,    97,    98
+      66,    67,    68,    68,    68,    68,    69,    69,    69,    70,
+      70,    70,    71,    71,    71,    71,    71,    72,    72,    72,
+      73,    73,    74,    74,    75,    75,    76,    76,    77,    77,
+      78,    78,    79,    80,    81,    81,    81,    81,    81,    81,
+      81,    81,    81,    81,    81,    82,    82,    83,    83,    84,
+      84,    85,    85,    86,    86,    87,    87,    88,    89,    90,
+      91,    92,    92,    92,    93,    94,    95,    95,    96,    97,
+      97,    98,    99,    99,   100
   };
 
   const unsigned char
    FooParser ::yyr2_[] =
   {
        0,     2,     1,     1,     1,     1,     1,     1,     1,     1,
-       2,     1,     1,     3,     1,     1,     4,     1,     2,     3,
-       3,     2,     2,     4,     2,     2,     3,     0,     3,     1,
-       1,     3,     3,     3,     1,     3,     3,     1,     3,     3,
-       1,     3,     3,     3,     3,     1,     3,     3,     1,     3,
-       1,     3,     1,     3,     1,     3,     1,     3,     1,     2,
-       1,     2,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     3,     1,     3,     1,     1,     1,
-       2,     0,     1,     1,     2,     1,     2,     2,     2,     0,
-       2,     2,     1,     2,     1,     3,     1,     1,     3,     3,
-       1,     3,     1
+       2,     1,     1,     3,     1,     1,     4,     2,     2,     3,
+       3,     2,     2,     3,     2,     2,     2,     0,     3,     1,
+       1,     1,     1,     3,     3,     3,     1,     3,     3,     1,
+       3,     3,     1,     3,     3,     3,     3,     1,     3,     3,
+       1,     3,     1,     3,     1,     3,     1,     3,     1,     3,
+       1,     2,     1,     2,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     3,     1,     3,     1,
+       1,     1,     2,     0,     1,     1,     2,     1,     2,     2,
+       2,     0,     2,     2,     1,     2,     1,     3,     1,     1,
+       3,     3,     1,     3,     1
   };
 
 
@@ -1190,7 +1202,8 @@ namespace  FooScript { namespace Parser  {
   "floating_literal", "string_literal", "translation_unit",
   "primary_expression", "postfix_expression", "postfix_call",
   "postfix_call_start", "postfix_call_end",
-  "postfix_call_post_callback_opt", "unary_expression",
+  "postfix_call_post_callback_opt", "postfix_call_post_callback_start",
+  "postfix_call_post_callback_end", "unary_expression",
   "multiplicative_expression", "additive_expression", "shift_expression",
   "relational_expression", "equality_expression", "and_expression",
   "exclusive_or_expression", "inclusive_or_expression",
@@ -1212,14 +1225,14 @@ namespace  FooScript { namespace Parser  {
        0,    87,    87,    91,    92,    93,    97,   101,   105,   112,
      113,   114,   121,   122,   123,   127,   128,   129,   130,   131,
      132,   133,   134,   138,   139,   143,   146,   154,   156,   160,
-     164,   165,   166,   167,   171,   172,   173,   177,   178,   179,
-     183,   184,   185,   186,   187,   191,   192,   193,   197,   198,
-     202,   203,   207,   208,   212,   213,   217,   218,   229,   230,
-     234,   237,   240,   241,   242,   243,   244,   245,   246,   247,
-     248,   249,   250,   254,   255,   259,   260,   271,   272,   276,
-     277,   286,   288,   291,   292,   299,   305,   309,   313,   315,
-     317,   318,   322,   325,   329,   330,   334,   338,   339,   343,
-     347,   348,   352
+     164,   168,   172,   173,   174,   175,   179,   180,   181,   185,
+     186,   187,   191,   192,   193,   194,   195,   199,   200,   201,
+     205,   206,   210,   211,   215,   216,   220,   221,   225,   226,
+     237,   238,   242,   245,   248,   249,   250,   251,   252,   253,
+     254,   255,   256,   257,   258,   262,   263,   267,   268,   279,
+     280,   284,   285,   294,   296,   299,   300,   307,   313,   317,
+     321,   323,   325,   326,   330,   333,   337,   338,   342,   346,
+     347,   351,   355,   356,   360
   };
 
   // Print the state stack on the debug stream.
@@ -1254,8 +1267,8 @@ namespace  FooScript { namespace Parser  {
 
 #line 11 "parser.y" // lalr1.cc:1156
 } } //  FooScript::Parser 
-#line 1258 "parser.cpp" // lalr1.cc:1156
-#line 355 "parser.y" // lalr1.cc:1157
+#line 1271 "parser.cpp" // lalr1.cc:1156
+#line 363 "parser.y" // lalr1.cc:1157
 
 
  void FooScript::Parser::FooParser::error(const location_type& l,

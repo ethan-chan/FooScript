@@ -596,7 +596,7 @@ namespace  FooScript { namespace Parser  {
   static const unsigned char yydefact_[];
 
   // YYPGOTO[NTERM-NUM].
-  static const signed char yypgoto_[];
+  static const short int yypgoto_[];
 
   // YYDEFGOTO[NTERM-NUM].
   static const short int yydefgoto_[];
@@ -718,8 +718,8 @@ namespace  FooScript { namespace Parser  {
     enum
     {
       yyeof_ = 0,
-      yylast_ = 136,           //< Last index in yytable_.
-      yynnts_ = 47,  //< Number of nonterminal symbols.
+      yylast_ = 138,           //< Last index in yytable_.
+      yynnts_ = 49,  //< Number of nonterminal symbols.
       yyempty_ = -2,
       yyfinal_ = 48, //< Termination state number.
       yyterror_ = 1,

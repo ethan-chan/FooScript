@@ -25,6 +25,7 @@ namespace FooScript {
             I_CLASS_CALL_END,
             I_CLASS_ARGU_CLAUSE,
             I_CLASS_SET_PARA_CLAUSE,
+            I_CLASS_COMPLETE_CALLBACK,
             I_MEMBER,
             I_CONTEXT_MEMBER
         };
@@ -476,6 +477,8 @@ namespace FooScript {
 
             void ExecuteClassArguClause();
             void ExecuteClassSetParaClause();
+
+            void ExecuteClassCompleteCallback();
 
             void ExecuteMemberAccess();
             void ExecuteContextMemberAccess();

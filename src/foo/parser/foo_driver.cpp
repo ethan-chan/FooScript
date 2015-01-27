@@ -98,6 +98,24 @@ void FooDriver::PumpStateClassEnd() {
     static_class_stack.pop();
 }
 
+void FooDriver::PumpStateCompleteCallbackStart() {
+    FOO_TOKENIZE_DBG("callback...");
+    auto Parent = static_class_stack.top();
+    tIndex SClassIndex = 0;
+    // 创建静态类对象，返回静态类数组中的索引
+    auto CurClass = vm.CreateSClass("", Parent, SClassIndex);
+    static_class_stack.push(CurClass);
+    // 压入指令
+    VMPushInstr(Parser::eInstr::I_CLASS_COMPLETE_CALLBACK);
+    // 压入静态类索引，类对象创建时，需要公共的静态类为参数
+    VMPushData(SClassIndex);
+}
+
+void FooDriver::PumpStateCompleteCallbackEnd() {
+    // 完成回调本质上也是一个类，遇到结束符时，逻辑跟普通类一致
+    PumpStateClassEnd();
+}
+
 void FooDriver::PumpStateClassCallStart() {
     FOO_TOKENIZE_DBG("(");
     //fun_call_stack.push(exp_value_stack.top());
