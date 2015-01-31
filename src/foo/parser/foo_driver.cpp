@@ -93,6 +93,8 @@ void FooDriver::PumpStateClass(const tToken& Token) {
 
 void FooDriver::PumpStateClassEnd() {
     FOO_TOKENIZE_DBG("#");
+    // 这里只压入命令
+    // 因为类的执行结果保存在固定寄存器中
     VMPushInstr(Parser::eInstr::I_CLASS_END);
     static_class_stack.top()->SetEndCursor(vm.GetCurrentInstrCount());
     static_class_stack.pop();

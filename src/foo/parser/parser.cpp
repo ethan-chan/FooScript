@@ -614,7 +614,7 @@ namespace  FooScript { namespace Parser  {
 
   case 30:
 #line 164 "parser.y" // lalr1.cc:846
-    { driver.PumpStateClassEnd(); }
+    { driver.PumpStateCompleteCallbackEnd(); }
 #line 619 "parser.cpp" // lalr1.cc:846
     break;
 

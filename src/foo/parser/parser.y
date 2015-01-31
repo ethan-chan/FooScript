@@ -161,7 +161,7 @@ postfix_call_post_callback_start
     ;
 
 postfix_call_post_callback_end
-    :  '#'                             { driver.PumpStateClassEnd(); }  
+    :  '#'                             { driver.PumpStateCompleteCallbackEnd(); }  
     ;
 
 unary_expression

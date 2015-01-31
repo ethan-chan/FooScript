@@ -355,6 +355,23 @@ Type::ValueObject& FooVM::FetchMemRefByIndex(tIndex Index) const {
     }
 }
 
+void FooVM::SetClassRetReg(tContextSPtr& Context) {
+    // 类执行完成后的返回值固定保存在 0 号寄存器中
+    // FetchClassRet 不消耗指令
+    // 类执行完成后的返回对象在 I_CLASS_END 中获得，
+    // 这样可以避免占用 0 号寄存器带来的冲突
+    auto& Ret = FetchClassRet();
+    auto DefautReturn = Context->GetReturnValue();
+    if (DefautReturn == nullptr) {
+        auto ValuePtr = std::static_pointer_cast<Type::ValueObject>(Context);
+        auto ValueObjectPtr = Type::tValueSPtr(new Type::ValueObject(ValuePtr));
+        Ret = ValueObjectPtr;
+    }
+    else {
+        Ret = DefautReturn;
+    }
+}
+
 FooVM::tSClassSPtr FooVM::GetSClassByIndex(tIndex Index) const {
     return static_class_array[Index];
 }   
@@ -432,13 +449,25 @@ void FooVM::ExecuteStateClass() {
     JumpToInstr(CurClass->GetEndCursor());
 }
 
+/*
+    第一种执行到 I_CLASS_END 的情况：
+    I_CLASS_CALL_WITHOUT_ARG
+    ...
+    I_CLASS_END
+
+    第二种执行到 I_CLASS_END 的情况：
+    I_CLASS_CALL_START
+    I_CLASS_CALL_CLAUSE
+    ...
+    I_CLASS_CALL_END
+    ...
+    I_CLASS_END
+*/
 void FooVM::ExecuteStateClassEnd() {
     auto CurContext = GetCurrentContext();
-    auto& Ret = FetchClassRet();
-    auto ValuePtr = std::static_pointer_cast<Type::ValueObject>(CurContext);
-    auto ValueObjectPtr = Type::tValueSPtr(new Type::ValueObject(ValuePtr));
-    Ret = ValueObjectPtr;
 
+    // 设置返回值
+    SetClassRetReg(CurContext);
     ExecuteClassContextExit(CurContext);
 }
 
@@ -475,6 +504,8 @@ void FooVM::ExecuteClassCall(tContextSPtr& Context) {
         Context->Execute();
         // 内部类直接执行成完
         ExecuteClassContextExit(Context);
+        // 设置返回值
+        SetClassRetReg(Context);
     }
     else {
         auto ClassStartCursor = Context->GetStartCursor();
@@ -524,6 +555,8 @@ void FooVM::ExecuteClassCompleteCallback() {
 
     // 创建上下文对象
     auto CurContext = tContextSPtr(new tContext(CurClass, PrevContext));
+    // 设置返回值
+    CurContext->SetReturnValue(FetchClassRet());
     // 进入上下文
     ExecuteClassContextEnter(CurContext);
     // 开始执行
@@ -603,7 +636,17 @@ FooVM::tInsCursor FooVM::DebugPrintInstr(tInsCursor Cursor, bool IsInExecute) co
         Cursor++;
         if (IsMemberIndex(Index)) {
             auto Count = GetMemberLevel(Index);
-            Cursor += Count;
+            for (auto j = 0; j < Count; j++) {
+                Index = instr_stream[Cursor];
+                fcs.LOG_DEBUG()
+                    << std::setfill('0') << std::setw(4) << Cursor << " "
+                    << std::setw(8)
+                    << std::hex
+                    << Index << " "
+                    << GetStoreName(Index) << " ";
+                fcs.LOG_DEBUG() << FooBase::Log::FooLogEnd;
+                Cursor++;
+            }
         }
     }
     return Cursor;
@@ -676,4 +719,7 @@ void FooVM::print::Execute(tContextSPtr& context) {
 }
 
 void FooVM::IF::Execute(tContextSPtr& context) {
+    auto ValueSPtr = std::static_pointer_cast<
+        Type::ValueObject>(std::shared_ptr<ELSE>(new ELSE(fcs, _else_static_class, context)));
+    context->operator[]("else") = ValueSPtr;
 }

@@ -203,15 +203,27 @@ namespace FooScript {
 
             class IF : public tInterClass {
                 using tInterClass::tInterClass;
+                class ELSE : public tInterClass {
+                public:
+                    ELSE(FooCmdSystem& Fcs, tSClassSPtr& StaticClass, tContextSPtr& ParentContext) :
+                        fcs(Fcs), tInterClass(StaticClass, ParentContext) {
+                    }
+                    virtual void Execute(tContextSPtr& context) {
+
+                    }
+                    protected:
+                        FooCmdSystem&                            fcs;
+                };
             public:
                 IF(FooCmdSystem& Fcs, tSClassSPtr& StaticClass, tContextSPtr& ParentContext) :
                     fcs(Fcs), tInterClass(StaticClass, ParentContext) {
-                    SetInfiniteParams();
+                    _else_static_class = tSClassSPtr(new tStaticClass("else", StaticClass, 0));
                 }
             public:
                 virtual void Execute(tContextSPtr& context);
             protected:
                 FooCmdSystem&                            fcs;
+                tSClassSPtr                              _else_static_class;
             };
 
             // 类执行后，生成的上下文对象，上下文与类共同组成了闭包
@@ -239,6 +251,10 @@ namespace FooScript {
             public:
                 void Execute() {
                     cur_class->Execute(shared_from_this());
+                }
+
+                void SetReturnValue(Type::tValueSPtr& Ret) {
+                    return_value = Ret;
                 }
             protected:
                 tToken GetName() const {
@@ -332,6 +348,10 @@ namespace FooScript {
                 tInsCursor GetReturnCursor() const {
                     return return_cursor;
                 }
+
+                Type::tValueSPtr GetReturnValue() const {
+                    return return_value;
+                }
             private:
                 void Enlarge(tIndex Pos) {
                     if (Pos + 1 > GetLocalSlotCount()) {
@@ -344,6 +364,7 @@ namespace FooScript {
                 tContextSPtr                            prev_context;
                 tClassSPtr                              cur_class;
                 tInsCursor                              return_cursor;
+                Type::tValueSPtr                        return_value;
             };
 
             class tDebugInstr {
@@ -456,6 +477,8 @@ namespace FooScript {
             Type::ValueObject& FetchArgRef();
             Type::ValueObject& FetchValRefByIndex(tIndex Index) const;
             Type::ValueObject& FetchMemRefByIndex(tIndex Index) const;
+
+            void SetClassRetReg(tContextSPtr& Context);
 
             tSClassSPtr GetSClassByIndex(tIndex Index) const;
 
